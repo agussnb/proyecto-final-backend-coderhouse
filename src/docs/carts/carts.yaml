@@ -1,0 +1,143 @@
+paths:
+  /api/carts/{cid}:
+    get:
+      summary: Obtiene información del carrito con el ID especificado (cid).
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del carrito.
+      responses:
+        '200':
+          description: Respuesta exitosa con la información del carrito.
+    delete:
+      summary: Elimina el carrito con el ID especificado (cid).
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del carrito a eliminar.
+      responses:
+        '204':
+          description: Carrito eliminado exitosamente.
+
+  /api/carts/{cid}/purchase:
+    get:
+      summary: Obtiene información de la compra del carrito con el ID especificado (cid).
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del carrito.
+      responses:
+        '200':
+          description: Respuesta exitosa con la información de la compra del carrito.
+    post:
+        summary: Realiza la compra del carrito con el ID especificado (cid).
+        tags:
+          - Carrito
+        parameters:
+          - in: path
+            name: cid
+            schema:
+              type: string
+            required: true
+            description: ID del carrito.
+        responses:
+          '200':
+            description: Compra realizada exitosamente.
+
+  /api/carts/{cid}/purchase/ticket:
+    get:
+      summary: Obtiene el ticket de la compra del carrito con el ID especificado (cid).
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del carrito.
+      responses:
+        '200':
+          description: Respuesta exitosa con el ticket de la compra del carrito.
+
+  /api/carts/:
+    post:
+      summary: Crea un nuevo carrito de compras.
+      tags:
+        - Carrito
+      responses:
+        '201':
+          description: Carrito de compras creado exitosamente.
+
+  /api/carts/{cid}/product/{pid}:
+    post:
+      summary: Agrega un producto con el ID especificado (pid) al carrito con el ID especificado (cid).
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del carrito.
+        - in: path
+          name: pid
+          schema:
+            type: string
+          required: true
+          description: ID del producto a agregar al carrito.
+      responses:
+        '200':
+          description: Producto agregado exitosamente al carrito.
+    delete:
+      summary: Elimina un producto con el ID especificado (pid) del carrito con el ID especificado (cid).
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del carrito.
+        - in: path
+          name: pid
+          schema:
+            type: string
+          required: true
+          description: ID del producto a eliminar del carrito.
+      responses:
+        '200':
+          description: Producto eliminado exitosamente del carrito.
+
+components:
+  schemas:
+    carts:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado por MongoDB
+        products:
+          type: Array
+          description: Array con los productos que se agregaron a ese carrito
+
+
+    
+   

@@ -1,0 +1,41 @@
+<br>
+<h1 class="h1WelcomeUser">Bienvenido {{user.name}}</h1>
+<form action="/" method="post">
+<h2 class="filterh2">Filtros:</h2>
+    <div class="d-flex justify-content-center align-items-center">
+    <select class="form-select selectProducts" name="selectedCategory" aria-label="Default select example">
+        <option value="" selected>Todas</option>
+        <option value="Pistol">Pistolas</option>
+        <option value="Rifle">Rifles</option>
+        <option value="Hunting Rifle">Rifles de caza</option>
+        <option value="Shotgun">Escopetas</option>
+        <option value="Submachine gun">Subfusiles</option>
+    </select>
+</div>
+{{!-- <select class="form-select selectProducts" name="selectedCategory" aria-label="Default select example">
+        <option value="" selected>Todas</option>
+        <option value="Pistol">Pistolas</option>
+        <option value="Rifle">Rifles</option>
+        <option value="Hunting Rifle">Rifles de caza</option>
+        <option value="Shotgun">Escopetas</option>
+        <option value="Submachine gun">Subfusiles</option>
+    </select> --}}
+    <br>
+</form>
+<div class="row" id="products-container">
+    {{#each products}}
+    <div class="col-sm-4">
+        <div class="card ">
+            <h4 class="card-title text-white">{{this.title}}</h4>
+            <img class="card-img-top" src="/images/{{this.thumbnail}}" alt="{{this.title}}">
+            <div class="card-body">
+                <p class="card-text precio">USD${{this.price}}</p>
+                <a class="btn verDetalle text-white" href="/api/products/{{this._id}}">Ver detalle</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/sortProducts.js"></script>

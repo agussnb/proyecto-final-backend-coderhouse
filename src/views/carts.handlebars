@@ -1,0 +1,23 @@
+<div class="cartDiv">
+  <h1 class="productosCarrito">Productos</h1>
+  <div class="row">
+    {{#each products}}
+    <div class="card bg-dark">
+      <h4 class="card-title text-white">{{this.ProductTitle}}</h4>
+      <img class="card-img-top" src="/images/{{this.ProductImage}}" alt="{{this.ProductTitle}}">
+      <div class="card-body">
+        <p class="card-text text-white">US${{this.ProductPrice}}</p>
+        <p class="card-text text-white">Unidad/es:{{this.ProductQuantity}}</p>
+        <p class="card-text text-white" >Id de producto: {{this.ProductId}}</p>
+        <hr>
+      </div>
+       <button class="delete-button btn" data-cart-id="{{../cartId}}" data-product-id="{{ProductId}}">Eliminar producto</button>
+      <br>
+    </div>
+    {{/each}}
+  </div>
+   <a class="btn finishPurchase" id="finishPurchase" data-cartId="{{cartId}}" data-product-id="{{ProductId}}" >Finalizar compra</a>
+</div>
+<button class="btn eraseFromCart" data-cart-id="{{this.cartId}}" onclick={{removeProducts}}>Eliminar productos del carrito</button>
+<script src="/js/deleteProductCart.js"></script>
+<script src="/js/finishPurchase.js"></script>

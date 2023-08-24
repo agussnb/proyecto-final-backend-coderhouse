@@ -1,0 +1,390 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.armasImagenes{
+    max-width: 400px;
+    height: auto;
+    border-radius: 1.5rem;
+}
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin: 1rem;
+    font-weight: 525;
+}
+.stock{
+    color: rgb(175, 37, 37);
+    font-weight: 600;
+}
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin: 1rem;
+}
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin: 1rem;
+}
+body{
+    background-color: #5baa96;
+    overflow-x: hidden;
+}
+.h1RealTimeProducts{
+    color: #ffff;
+    text-align: center;
+}
+.ProductIdCart{
+    color: #ffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+.ProductQuantityCart{
+    color: #ffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+.card{
+    width: 20rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: #1f3f3b;
+    text-align: center;
+}
+.card-title{
+    text-align: center;
+}
+.card-text{
+    border-radius: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    border: solid 0.1rem #ffff;
+
+}
+.precio{
+    text-align: center;
+    color: #0ed564;
+    text-decoration: none;
+}
+.productosCarrito{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.carritoNombre{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.existingAccount{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.linkToLogin{
+    text-decoration: none;
+    color: #ffff;
+}
+.linkToLogin:hover{
+    color: #02f6f2;
+}
+.h1Register{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.h1Login{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.nonExistingAccount{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.linkToRegister{
+    text-decoration: none;
+    color: #ffff;
+}
+.linkToRegister:hover{
+    color: #02f6f2;
+}
+.h1WelcomeUser{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.h1Admin{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+    margin: 1rem;
+    padding: 1rem;
+}
+.genericTextStyle{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.githubLogin{
+    margin: 1.5rem;
+}
+.githubLogin:hover{
+    background-color: #30b3a5;
+    color: #0f0f0f;
+}
+.h1LoginGithub{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+    padding: 0.4rem;
+    margin: 0.4rem;
+}
+h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+}
+.login{
+    width: fit-content;
+    position: absolute;
+    left: 75rem;
+}
+.logout{
+    width: fit-content;
+    position: absolute;
+    left: 70rem;
+}
+.dropdown{
+    position: relative;
+    left: 40rem;
+}
+.verDetalle{
+    background-color: #199c7d;
+}
+.verDetalle:hover{
+    background-color: #13695f;
+}
+.carrito{
+    position: relative;
+    left: 40rem;
+}
+.ulProductosTicket{
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+    font-size: 1.5rem;
+    text-align: center;
+    list-style: none;
+    border: 5px, solid #0f0f0f
+}
+.usuarioTicket{
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    font-size: 1.5rem;
+    text-align: center;
+    list-style: none;
+}
+.h1Ticket, .h2Ticket, .h3Ticket{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+}
+.divTicket{
+    border: 5px, solid #0f0f0f
+}
+.fatherDivTicket{
+    background-image: url('../images/hero-bg.png');
+}
+.productDiv{
+    display: flex;
+    justify-content: center;
+    background-color: #82c1af;
+    margin-top: 4rem;
+    margin-left: 8.2rem;
+    padding: 2rem;
+    width: 80%;
+    height: 30rem;
+    border: solid 0.1rem black;
+    border-radius: 0.3rem;
+}
+.productInformationDiv{
+    max-width: 25rem;
+    max-height: 30rem;
+    width: 25rem;
+    height: 20rem;
+    position: relative;
+    right: 1rem;
+}
+.productBuyDiv{
+    border: solid 0.1rem black;
+    border-radius: 0.3rem;
+    width: 20rem;
+    text-align: center;
+}
+.form-select{
+    border: solid 0.1rem rgb(43, 43, 43, 0.5);
+    background-color: #8dc4b5;
+    width: fit-content;
+    margin-left: 1rem;
+}
+
+.productImg{
+    max-width: 30rem;
+    max-height: 25rem;
+    border-radius: 5rem;
+    padding: 1.5rem;
+    position: relative;
+    right: 1rem;
+}
+.btn{
+    background-color: #8dc4b5;
+    width: fit-content;
+    border: solid 0.1rem #000;
+}
+.btn:hover{
+    background-color: #4c8576;
+    color: #ffff;
+}
+.productCartDiv{
+    border: solid 0.3rem rgb(0, 0, 0);
+    width: 100%;
+    height: 8.5rem;
+    background-color: #8dc4b5;
+}
+.productCartImg{
+    width: 10rem;
+    height: 8rem;
+}
+.delete-button{
+    background-color: #ff0000;
+    color: #ffffff;
+   position: relative;
+   left: 25%;
+}
+.delete-button:hover{
+    background-color: #a40b0b;
+}
+.eraseFromCart{
+    width: 8rem;
+    height: 8rem;
+    background-color: #ff0000;
+    color: #ffff;
+    position: relative;
+    bottom: 40rem;
+    left: 75rem;
+}
+.eraseFromCart:hover{
+    background-color: #a40b0b;
+}
+.finishPurchase{
+    position: relative;
+    left: 37.5rem;
+    bottom: 35rem;
+    background-color: #015007;
+    color: #ffffff;
+}
+.finishPurchase:hover{
+    background-color: #026a0b;
+    color: #ffffff
+}
+.warningDiv{
+    background-color: #ffff00;
+    color: #000;
+    height: fit-content;
+    width: fit-content;
+    border: solid 0.1rem #0f0f0f;
+    border-radius: 1rem;
+    font-weight: 300;
+    font-size: small;
+}
+.dropdown-menu,.dropdown-toggle{
+    background-color: #8dc4b5;
+    border: solid 0.1rem #000;
+    border-radius: 0.4rem;
+}
+.dropdown-item{
+    background-color: #8dc4b5;
+    border: solid 0.1rem #000;
+    border-radius: 0.3rem;
+}
+.dropdown-item:hover{
+    background-color: #4c8576;
+    color: #ffffff;
+}
+.dropdown-toggle:hover{
+    background-color: #4c8576;
+}
+.filterh2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    margin: 1rem;
+    text-align: center;
+}
+.selectProducts{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+@media screen and (min-width:1920px) {
+    .card{
+        margin: 5rem;
+        width: 23rem;
+    }
+    .verDetalle {
+        width: 21rem;
+    }
+    .verMas{
+        width: 21rem;
+    }
+    .verMenos{
+        width: 21rem;
+    }
+    .agregarAlCarrito{
+        width: 21rem;
+    }
+    .delete-button{
+        width: 21rem;
+        left: 0%;
+    }
+    .dropdown{
+        left: 85rem;
+    }
+    .logout{
+        left: 95.5rem;
+    }
+    .login{
+        left: 90rem;
+    }
+    .carrito{
+        left: 70rem;
+    }
+    .githubLogin{
+        position: relative;
+        left: 50rem;
+    }
+    .finishPurchase{
+        left: 55rem;
+        bottom: 47rem;
+    }
+    .eraseFromCart{
+        left: 110rem;
+        bottom: 50rem;
+    }
+    .warningDiv{
+        position: relative;
+        left: 1rem;
+        right: 2rem;
+        height: 6rem;
+        border: solid 0.1rem #0f0f0f;
+        border-radius: 1rem;
+        font-weight: 500;
+        font-size: larger;
+    }
+}

@@ -1,0 +1,79 @@
+paths:
+  /api/testing/mockingproducts:
+    get:
+      summary: Mocking de 100 productos con información falsa
+      tags:
+        - Testing
+      responses:
+        '200':
+          description: Éxito al realizar el mocking de 100 productos
+        '400':
+          description: Error al realizar el mocking de 100 productos
+        '500':
+          description: Error en el servidor
+
+  /api/testLogger/debug:
+    get:
+      summary: Testeo del logger de debug
+      tags:
+        - Testing
+      responses:
+        '200':
+          description: Éxito al realizar el testeo del logger de debug
+        '500':
+          description: Error en el servidor
+
+  /api/testLogger/info:
+    get:
+      summary: Testeo del logger de info
+      tags:
+        - Testing
+      responses:
+        '200':
+          description: Éxito al realizar el testeo del logger de info
+        '500':
+          description: Error en el servidor
+
+  /api/testLogger/warning:
+    get:
+      summary: Testeo del logger de warning
+      tags:
+        - Testing
+      responses:
+        '200':
+          description: Éxito al realizar el testeo del logger de warning
+        '500':
+          description: Error en el servidor
+
+  /api/testLogger/error:
+    get:
+      summary: Testeo del logger de error
+      tags:
+        - Testing
+      responses:
+        '200':
+          description: Éxito al realizar el testeo del logger de error
+        '500':
+          description: Error en el servidor
+
+  /api/testLogger/fatal:
+    get:
+      summary: Testeo del logger de fatal
+      tags:
+        - Testing
+      responses:
+        '200':
+          description: Éxito al realizar el testeo del logger de fatal
+        '500':
+          description: Error en el servidor
+
+  /api/testLogger/http:
+    get:
+      summary: Testeo del logger de http
+      tags:
+        - Testing
+      responses:
+        '200':
+          description: Éxito al realizar el testeo del logger de http
+        '500':
+          description: Error en el servidor

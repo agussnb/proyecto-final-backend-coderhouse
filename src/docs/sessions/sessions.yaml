@@ -1,0 +1,77 @@
+paths:
+  /api/sessions/register:
+    post:
+      summary: Realiza el registro de un usuario
+      tags:
+        - Sesiones
+      responses:
+        '200':
+          description: La operación fue exitosa.
+        '400':
+          description: Se envio un dato no esperado.
+        '500':
+          description: Error inesperado en el servidor.
+  /api/sessions/login:
+    post:
+      summary: Realiza el inicio de sesion
+      tags:
+        - Sesiones
+      responses:
+        '200':
+          description: La operacion fue exitosa.
+        '400':
+          description: Se envio un dato no esperado.
+        '500':
+          description: Error inesperado en el servidor.
+  /api/sessions/fail-register:
+    get:
+      summary: Vista que se muestra cuando hay un error al realizar el registro de un usuario
+      tags:
+        - Sesiones
+      responses:
+        '200':
+          description: La operacion fue exitosa.
+        '400':
+          description: Se envio un dato no esperado.
+        '500':
+          description: Error inesperado en el servidor.
+  /api/sessions/fail-login:
+    get:
+      summary: Vista que se muestra cuando hay un error al realizar el inicio de sesion de un usuario
+      tags:
+        - Sesiones
+      responses:
+        '200':
+          description: La operacion fue exitosa.
+        '400':
+          description: Se envio un dato no esperado.
+        '500':
+          description: Error inesperado en el servidor.
+  /api/sessions/logout:
+    get:
+      summary: Permite el cierre de una sesion
+      tags:
+        - Sesiones
+      responses:
+        '200':
+          description: La operacion fue exitosa.
+        '400':
+          description: Se envio un dato no esperado.
+        '500':
+          description: Error inesperado en el servidor.
+  /api/sessions/github:
+    get:
+      summary: Permite iniciar sesion con una cuenta de GitHub
+      tags:
+        - Sesiones
+      responses:
+        '200':
+          description: La operacion fue exitosa.
+        '400':
+          description: Se envio un dato no esperado.
+        '500':
+          description: Error inesperado en el servidor.
+  
+
+  
+

@@ -1,0 +1,37 @@
+<div class="productDiv" data-product-id="{{product._id}}" data-product-price="{{product.price}}" data-product-title="{{product.title}}" data-product-thumbnail="{{product.thumbnail}}">
+    <img class="productImg" src="/images/{{product.thumbnail}}" alt="{{product.title}}">
+        <div class="productInformationDiv">
+            <p>
+                {{product.title}}
+            </p>
+            <p>
+                US $ {{product.price}}
+            </p>
+            <p>{{product.description}}</p>
+            <p>Id de producto: {{product._id}}</p>
+            <p>Codigo de producto: {{product.code}}</p>
+        </div>
+        <div class="productBuyDiv">
+            <p>Stock disponible:</p>
+            <h5>{{product.stock}}</h5>
+                <select class="form-select" name="opciones" id="unidades">
+                <option value="1">Cantidad: 1 Unidad </option>
+                <option value="2">Cantidad: 2 Unidades</option>
+                <option value="3">Cantidad: 3 Unidades</option>
+                <option value="4">Cantidad: 4 Unidades</option>
+                <option value="5">Cantidad: 5 Unidades</option>
+                <option value="6">Cantidad: 6 Unidades</option>
+                <option value="7">Cantidad: 7 Unidades</option>
+                <option value="8">Cantidad: 8 Unidades</option>
+                <option value="9">Cantidad: 9 Unidades</option>
+                <option value="10">Cantidad: 10 Unidades</option>
+                </select>
+                <br>
+                <input onclick="agregarAlCarrito()"data-cartId="{{user.cartId}}" data-productId="{{product._id}}" class="btn" type="submit" value="Agregar al carrito">
+        </div>
+        <script src="/js/product.js"></script>
+        <div class="warningDiv">Advertencia: Antes de agregar un producto al carrito, debe estar logeado, de lo contrario, el producto no se podrá agregar al carrito.</div>
+</div>
+ <script src="/js/redirections.js"></script>
+
+
