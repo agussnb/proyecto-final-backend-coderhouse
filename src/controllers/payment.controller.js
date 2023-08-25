@@ -1,5 +1,5 @@
 import Stripe from 'stripe';
-
+import ProductManager from '../dao/DB/ProductManager.js'
 import CartManager from '../dao/DB/CartManager.js';
 
 const stripeSecretKey = process.env.STRIPE_APP_SECRET_KEY
@@ -9,6 +9,7 @@ const stripe = new Stripe(stripeSecretKey);
 export const createSession = async (req, res) => {
     try {
         const cartManager = new CartManager();
+        const productManager = new ProductManager();
         const cartId = req.query.cartId;
         
         // Obtén el carrito del usuario
@@ -21,11 +22,23 @@ export const createSession = async (req, res) => {
         
         const simplifiedCartProduct = cartProduct.cart.products.map(p => {
             return {
+                ProductId: p._id, // Agregar el ID del producto
                 ProductQuantity: p.quantity,
                 ProductPrice: p.price,
                 ProductTitle: p.title,
             };
         });
+
+        // Restar la cantidad comprada del stock de cada producto
+        for (const product of simplifiedCartProduct) {
+            const existingProduct = await productManager.getProductById(product.ProductId);
+            if (!existingProduct) {
+                return res.status(404).json({ error: `Producto con ID ${product.ProductId} no encontrado` });
+            }
+
+            const updatedStock = existingProduct.stock - product.ProductQuantity; // Restar la cantidad comprada
+            await productManager.updateProduct(product.ProductId, { stock: updatedStock });
+        }
 
         // Estructura los datos para las líneas de items de Stripe
         const lineItems = simplifiedCartProduct.map(product => ({
@@ -50,6 +63,8 @@ export const createSession = async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 };
+
+
 
 
 

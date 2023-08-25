@@ -6,7 +6,7 @@ const program = new Command(); //Crea la instancia de comandos de commander.
 program
     .option('-d', 'Variable para debug', false)
     .option('--test', 'Variable para correr los test', false)
-    .option('-p <port>', 'Puerto del servidor', 9090)
+    .option('-p <port>', 'Puerto del servidor', 8080)
     .option('--mode <mode>', 'Modo de trabajo', 'develop')
 program.parse();
 
