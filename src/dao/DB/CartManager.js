@@ -3,6 +3,8 @@ import { productsModel } from "./models/products.model.js";
 import { getLogger } from '../../config/logger.js';
 import mongoose from "mongoose";
 const logger = getLogger();
+import UserManager from "./UserManager.js";
+const userManager = new UserManager()
 
 
 class CartManager {
@@ -152,7 +154,9 @@ async removeAllProductsFromCart(cartId) {
 
   cart.products = [];
   await cart.save();
+  await userManager.eraseProductsFromUserCart(cart.userId)
   return cart;
+
 }
 
 

@@ -14,5 +14,5 @@ form.addEventListener('submit',e=>{
         headers:{
             'Content-Type':'application/json'
         }
-    }).then(result=>result.json()).then(json=>console.log(json)).then(window.location.href = "/users/login");
+    }).then(result=>result.json()).then(json=>console.log(json)).then(window.location.href = "/api/users/login");
 })

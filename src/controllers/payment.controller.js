@@ -45,7 +45,6 @@ export const createSession = async (req, res) => {
             success_url: "http://localhost:8080/api/payments/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url: "http://localhost:8080/api/payments/cancel",
         });
-
         return res.json({ url: session.url });
     } catch (error) {
         return res.status(500).json({ message: error.message });

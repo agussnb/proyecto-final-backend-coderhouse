@@ -72,17 +72,17 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname+'/public'));
 
 //Declaracion de rutas
-app.use('/',viewsRouter);
-
+app.use("/github", githubLoginViewRouter);
+app.use("/api/payments", paymentRouter);
+app.use('/api/users',usersViewRouter);
 app.use('/api/products', productsRouter);
 
 app.use('/api/carts', cartsRouter);
 
-app.use('/api/users',usersViewRouter);
+
 
 app.use('/api/sessions',sessionsRouter);
 
-app.use("/github", githubLoginViewRouter);
 
 app.use("/api/email", emailRouter);
 
@@ -90,8 +90,8 @@ app.use('/api/testing', testMockingRouter);
 
 app.use('/api/testLogger' , testLoggerRouter)
 
-app.use("/api/payments", paymentRouter);
 
+app.use('/',viewsRouter);
 
 //Coneccion a la base de datos de mongodb
 
@@ -126,5 +126,6 @@ const swaggerOptions = {
 const specs = swaggerJSDoc(swaggerOptions)
 
 app.use('/api/docs', swaggerUIExpress.serve, swaggerUIExpress.setup(specs));
+
 
 export default socketServer;

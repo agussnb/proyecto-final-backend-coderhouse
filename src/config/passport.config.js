@@ -65,6 +65,7 @@ const initializePassport = ()=>{
                     email,
                     age,
                     password: createHash(password),
+                    role:req.session.admin
                 };
                 
                 const result = await userModel.create(user);

@@ -38,6 +38,39 @@ class UserManager {
   get = (params) => {
     return userModel.find(params);
   };
+
+  getAllUsers = async () => {
+    try {
+      const users = await userModel.find().lean();
+  
+      if (!users || users.length === 0) {
+        throw new Error('No se encontraron usuarios');
+      }
+  
+      return users; // Retorna la lista de usuarios encontrados
+    } catch (error) {
+      throw new Error('Error al obtener la lista de usuarios');
+    }
+  };
+
+  async eraseProductsFromUserCart(userId) {
+    try {
+      // Obtener el usuario por su ID
+      const user = await this.getUserDataById(userId);
+
+      user.cart.products = [];
+
+      await user.save();
+
+      return user;
+    } catch (error) {
+      throw new Error("Error al borrar productos del carrito del usuario: " + error.message);
+    }
+  }
+
+
 }
+
+
 
 export default UserManager;
