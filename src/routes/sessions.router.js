@@ -2,8 +2,9 @@ import { Router } from 'express';
 import passport from 'passport'
 import { getLogger } from '../config/logger.js';
 import fetch from 'node-fetch';
+import UserManager from '../dao/DB/UserManager.js';
 const logger = getLogger();
-
+const userManager = new UserManager()
 
 
 const router = Router();
@@ -115,6 +116,24 @@ router.get('/logout', (req, res)=>{
         })
     })  
 
+router.put('/:userId', passport.authenticate('update', { session: false }), async (req, res) => {
+    try {
+        const updatedUser = req.user;
+        res.json({ status: 'Success', msg: 'Usuario actualizado', user: updatedUser });
+    } catch (error) {
+        res.status(500).json({ status: 'Error', msg: 'Error al actualizar el usuario', error: error.message });
+    }
+});
 
+router.delete('/:userId', async (req, res) => {
+    const userId = req.params.userId;
+  
+    try {
+      const deletedUser = await userManager.deleteUserById(userId);
+      res.json({ message: 'Usuario eliminado exitosamente', deletedUser });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
 
 export default router;

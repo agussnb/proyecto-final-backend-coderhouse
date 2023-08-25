@@ -81,7 +81,7 @@ router.put('/:pid',async(req,res)=>{
 //  Borrar producto
 
 router.delete('/:pid',async(req,res)=>{
-    let productId = parseInt(req.params.pid)
+    let productId = req.params.pid
     try{
         const product = await productManager.getProductById(productId)
         if(!product){

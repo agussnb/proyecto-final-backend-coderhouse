@@ -99,6 +99,38 @@ const initializePassport = ()=>{
         })
     );
 
+    passport.use('update', new localStrategy(
+        { passReqToCallback: true, usernameField: 'email' },
+        async(req, username, password, done) =>{
+            const { first_name, last_name, email, age } = req.body;
+            try {
+                const userToUpdate = await userModel.findOne({ email });
+    
+                if (!userToUpdate) {
+                    logger.info("El usuario no existe.");
+                    return done(null, false);
+                }
+    
+                // Actualizar los campos del usuario si se proporcionan en el cuerpo de la solicitud
+                if (first_name) userToUpdate.first_name = first_name;
+                if (last_name) userToUpdate.last_name = last_name;
+                if (age) userToUpdate.age = age;
+                if (password) userToUpdate.password = createHash(password);
+                if (req.session.admin) userToUpdate.role = req.session.admin;
+    
+                const result = await userToUpdate.save();
+    
+                // Todo sale OK
+                return done(null, result);
+            } catch (error) {
+                return done("Error actualizando el usuario: " + error);
+            }
+        }
+    ));
+    
+    
+    
+
     //Funciones de Serializacion y Desserializacion
     passport.serializeUser((user, done) => {
         done(null, user._id);

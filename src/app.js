@@ -47,10 +47,10 @@ app.use(session({
     store:MongoStore.create({
         mongoUrl:MONGO_URL,
         mongoOptions: {useNewUrlParser: true, useUnifiedTopology: true},
-        ttl: 20000
+        ttl: 20000000
     }),
     cookie:{
-        maxAge:360000
+        maxAge:360000000
     },
     secret:"CoderS3cret",
     resave: false,

@@ -1,1 +1,198 @@
 <h1 class="h1Admin">Si podes ver esto, es porque sos un admin 😎</h1>
+<div>
+    <h2>Aca podras manejar los productos e usarios, crear, actualizar, eliminar.</h2>
+    <select id="selectAction" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Seleccione la accion que desee realizar</option>
+        <option value="createProduct">Crear producto</option>
+        <option value="updateProduct">Actualizar producto</option>
+        <option value="deleteProduct">Borrar producto</option>
+        <option value="createUser">Crear usuario</option>
+        <option value="updateUser">Actualizar usuario</option>
+        <option value="deleteUser">Borrar usuario</option>
+    </select>
+</div>
+
+{{!----------------------------------------------------------------- Crear producto -----------------------------------------------------------------}}
+<div class="form-floating mb-2 hidden">
+    <h3 id="createProductH3" hidden>Crear producto</h3>
+    <form id="createProductForm" hidden>
+        <div class="form-floating">
+            <input class="form-control" id="titleInput" placeholder="Titulo" name="title">
+            <label for="titleInput">Titulo</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="descriptionInput" placeholder="Descripcion" name="description">
+            <label for="descriptionInput">Descripcion</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="priceInput" placeholder="Precio" name="price">
+            <label for="priceInput">Precio</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="thumbnailInput" placeholder="Miniatura.jpg" name="thumbnail">
+            <label for="thumbnailInput">Miniatura</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="codeInput" placeholder="Codigo" name="code">
+            <label for="codeInput">Codigo</label>
+        </div>
+        <br>
+          <div class="form-floating">
+            <input class="form-control" id="stockInput" placeholder="Stock" name="stock">
+            <label for="stockInput">Stock</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input class="form-control" id="categoryInput" placeholder="Categoria" name="category">
+            <label for="categoryInput">Categoria</label>
+        </div>
+        <br>
+        <input class="btn btn-dark" type="submit" id="createProductButton">
+    </form>
+</div>
+
+{{!----------------------------------------------------------------- Actualizar producto -----------------------------------------------------------------}}
+<div class="form-floating mb-2">
+    <h3 id="UpdateProductH3" hidden>Actualizar producto</h3>
+    <form id="updateProductForm" hidden>
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Id del producto" name="productId">
+            <label for="floatingInput">Id del producto</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Titulo" name="title">
+            <label for="floatingInput">Titulo</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Descripcion"name="description">
+            <label for="floatingInput">Descripcion</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Precio"name="price">
+            <label for="floatingInput">Precio</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Miniatura.jpg"name="thumbnail">
+            <label for="floatingInput">Miniatura</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input  class="form-control" placeholder="Codigo"name="code">
+            <label>Codigo</label>
+        </div>
+        <br>
+               <div class="form-floating">
+            <input class="form-control" id="stockInput" placeholder="Stock" name="stock">
+            <label for="stockInput">Stock</label>
+        </div>
+        <br>
+           <div class="form-floating">
+            <input  class="form-control" placeholder="Categoria"name="category">
+            <label>Categoria</label>
+        </div>
+        <br>
+        <input class="btn btn-dark" type="submit" id="updateProductButton">
+    </form>
+</div>
+{{!----------------------------------------------------------------- Borrar producto -----------------------------------------------------------------}}
+<div class="form-floating mb-2">
+    <h3 id="deleteProductH3" hidden>Borrar producto</h3>
+    <form id="deleteProductForm" hidden>
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Id del producto" name="productId">
+            <label for="floatingInput">Id del producto</label>
+        </div>
+        <br />
+        <input class="btn btn-dark" type="submit" id="deleteProductButton">
+    </form>
+</div>
+{{!----------------------------------------------------------------- Crear usuario -----------------------------------------------------------------}}
+<div class="form-floating mb-2">
+    <h3 id="createUserH3" hidden>Crear usuario</h3>
+    <form hidden id="createUserForm">
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Nombre" name="first_name">
+            <label for="floatingInput">Nombre</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Apellido" name="last_name">
+            <label for="floatingInput">Apellido</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
+            <label for="floatingInput">Email</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Edad" name="age">
+            <label for="floatingInput">Edad</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input type="password" class="form-control" placeholder="Password" name="password">
+            <label>Contraseña</label>
+        </div>
+        <br>
+        <input class="btn btn-dark" type="submit" id="createUserButton">
+    </form>
+</div>
+{{!----------------------------------------------------------------- Actualizar usuario -----------------------------------------------------------------}}
+<div class="form-floating mb-2">
+    <h3 id="updateUserH3" hidden>Actualizar usuario</h3>
+    <form hidden id="updateUserForm">
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Id del usuario" name="userId">
+            <label for="floatingInput">Id del usuario</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Nombre" name="first_name">
+            <label for="floatingInput">Nombre</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Apellido" name="last_name">
+            <label for="floatingInput">Apellido</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
+            <label for="floatingInput">Email</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Edad" name="age">
+            <label for="floatingInput">Edad</label>
+        </div>
+        <br />
+        <div class="form-floating">
+            <input type="password"  class="form-control" placeholder="Password" name="password">
+            <label>Contraseña</label>
+        </div>
+        <br>
+        <input class="btn btn-dark" type="submit" id="updateUserButton">
+    </form>
+</div>
+{{!----------------------------------------------------------------- Borrar usuario -----------------------------------------------------------------}}
+<div class="form-floating mb-2">
+    <h3 id="deleteUserH3" hidden>Borrar Usuario</h3>
+    <form id="deleteUserForm" hidden>
+        <div class="form-floating">
+            <input class="form-control" id="floatingInput" placeholder="Id del usuario" name="userId">
+            <label for="floatingInput">Id del usuario</label>
+        </div>
+        <br />
+        <input class="btn btn-dark" type="submit" id="deleteUserButton">
+    </form>
+</div>
+<script src="/js/admin.js"></script>

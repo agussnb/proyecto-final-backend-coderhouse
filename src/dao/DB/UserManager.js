@@ -55,7 +55,7 @@ class UserManager {
 
   async eraseProductsFromUserCart(userId) {
     try {
-      // Obtener el usuario por su ID
+
       const user = await this.getUserDataById(userId);
 
       user.cart.products = [];
@@ -68,6 +68,34 @@ class UserManager {
     }
   }
 
+  updateUser = async (userId, updatedData) => {
+    try {
+      const user = await this.getUserDataById(userId);
+
+      Object.assign(user, updatedData);
+
+      await user.save();
+
+      return user; 
+    } catch (error) {
+      throw new Error("Error al actualizar los datos del usuario: " + error.message);
+    }
+  };
+
+  deleteUserById = async (userId) => {
+    try {
+      const result = await userModel.deleteOne({ _id: userId });
+  
+      if (result.deletedCount === 0) {
+        throw new Error(`No existe un usuario con el id ${userId}`);
+      }
+  
+      logger.info('Usuario eliminado correctamente');
+    } catch (error) {
+      throw new Error('No se ha podido borrar al usuario');
+    }
+  };
+  
 
 }
 
